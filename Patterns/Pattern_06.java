@@ -1,23 +1,22 @@
 // Given an integer n. You need to recreate the pattern given below for any value of N. Let's say for N = 5, the pattern should look like as below:
 
+// 12345
+// 1234
+// 1231
+// 12
 // 1
-// 22
-// 333
-// 4444
-// 55555
 
-
-public class Pattern_04 {
-    public void pattern04(int n){
-        for(int i= 1 ;i<=n;i++){
-            for(int j=0 ; j < i ; j++){
-                System.out.print(i);
+public class Pattern_06 {
+    public void pattern06(int n){
+        for(int i = 0;i<n;i++){
+            for(int j = 1; j<=n-i;j++){
+                System.out.print(j);
             }
             System.out.println();
         }
     }
     public static void main(String[] args) {
-        Pattern_04  p4 = new Pattern_04();
-        p4.pattern04(5);
+        Pattern_06 p6 = new Pattern_06();
+        p6.pattern06(5);
     }
 }

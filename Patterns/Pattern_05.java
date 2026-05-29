@@ -9,7 +9,7 @@
 
 
 public class Pattern_05 {
-    public void pattern_05(int n){
+    public void pattern05(int n){
         for(int i=0 ;i<n ;i++){
             for(int j = n ;j>i;j--){
                 System.out.print("*");
@@ -19,7 +19,7 @@ public class Pattern_05 {
     }
     public static void main(String[] args) {
         Pattern_05 p5 = new Pattern_05();
-        p5.pattern_05(5);
+        p5.pattern05(5);
 
     }
 }
