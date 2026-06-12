@@ -1,5 +1,3 @@
-package Arrays.Easy;
-
 public class SecondLargest {
     public int secondLargestElement(int[] nums) {
 
