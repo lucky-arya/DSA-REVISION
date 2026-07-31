@@ -131,6 +131,46 @@ public class DoublyLL {
         }
     }
 
+    public Node reverseDLL(Node head){
+        if (head == null || head.next == null) {
+        return head;
+    }
+
+        Node prev=null;
+        Node curr=head;
+
+        while(curr!=null){
+            prev=curr.prev;
+            curr.prev=curr.next;
+            curr.next=prev;
+            curr=curr.prev;
+        }
+        return prev.prev;
+    }
+
+    public Node reverseDLL2(Node head) {
+    if (head == null) return null;
+
+    Node curr = head;
+    Node last = null;
+
+    while (curr != null) {
+        // Keep track of the current node before moving
+        last = curr; 
+        
+        // Swap pointers
+        Node temp = curr.prev;
+        curr.prev = curr.next;
+        curr.next = temp;
+
+        // Advance using the original next pointer (now stored in curr.prev)
+        curr = curr.prev; 
+    }
+
+    // 'last' is safely pointing to the new head of the list
+    return last;
+}
+
 
     public int size(){
         Node temp=head;
