@@ -107,6 +107,48 @@ public class LinkedList{
         temp.next=temp.next.next;
     }
 
+    public void removeFromLast(int n){
+        
+        int size=size();
+        if(n>size){
+            System.out.println("Invalid index");
+            return;
+        }
+
+        if(n==size){
+            removeFirst();
+            return;
+        }
+
+        Node temp=head;
+        int i=0;
+
+        while(i<size-n-1){
+            temp=temp.next;
+            i++;
+        }
+
+        temp.next=temp.next.next;
+    }
+
+    public void deleteMiddle(Node head){
+        if(head==null || head.next==null){
+            return;
+        }
+
+        Node slow=head;
+        Node fast=head;
+        Node prev=null;
+
+        while(fast!=null && fast.next!=null){
+            prev=slow;
+            slow=slow.next;
+            fast=fast.next.next;
+        }
+
+        prev.next=slow.next;
+    }
+
     public int Search(int key){
         Node temp=head;
         int index=0;

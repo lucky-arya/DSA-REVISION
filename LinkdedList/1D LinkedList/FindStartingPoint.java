@@ -55,6 +55,36 @@ public class FindStartingPoint{
         return slow;
     }
 
+    public int loopLength(Node head){
+        if(head==null || head.next==null){
+            return 0;
+        }
+
+        Node slow=head;
+        Node fast=head;
+
+        while(fast!=null && fast.next!=null){
+            slow=slow.next;
+            fast=fast.next.next;
+
+            if(slow==fast){
+                break;
+            }
+        }
+
+        if(slow!=fast){
+            return 0;
+        }
+
+        int length=0;
+        do{
+            slow=slow.next;
+            length++;
+        }while(slow!=fast);
+
+        return length;
+    }
+
     public void print(){
         Node temp=head;
         while(temp!=null){
@@ -83,5 +113,8 @@ public class FindStartingPoint{
         }else{
             System.out.println("No cycle found.");
         }
+
+        int loopLength = ll.loopLength(ll.head);
+        System.out.println("Length of the loop is: "+loopLength);
     }
 }
